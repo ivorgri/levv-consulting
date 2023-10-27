@@ -1,4 +1,11 @@
-# Ignore
+# Development
 node_modules/
-
 .vscode/
+
+# Automad
+automad-master.zip
+automad-master/**
+!automad-master/packages/
+!automad-master/packages/standard/
+!automad-master/packages/standard/levv/
+!automad-master/packages/standard/levv/**
