@@ -1,0 +1,13 @@
+:root {
+    --am-block-max-width: 100%;
+    --am-block-margin-top: 0rem;
+}
+
+.am-block a {
+    text-decoration: underline;
+    color: #6096B4;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

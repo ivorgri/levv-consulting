@@ -1,0 +1,11 @@
+# Development
+node_modules/
+.vscode/
+
+# Automad
+automad-master.zip
+automad-master/**
+!automad-master/packages/
+!automad-master/packages/levv/
+!automad-master/packages/levv/levv_theme/
+!automad-master/packages/levv/levv_theme/**
