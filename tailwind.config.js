@@ -9,10 +9,12 @@ module.exports = {
       //   'logo': ['"Oooh Baby"'],
       // },
       colors: {
-        'levv-primary': '#6096B4',
-        'levv-secondary': '#93BFCF',
-        'levv-tertiary': '#BDCDD6',
-        'levv-quaternary': '#EEE9DA'
+        'levv-turqouise': '#00889A',
+        'levv-korenblauw': '#004E91',
+        'levv-dieppaars': '#472553',
+        'levv-wijnrood': '#880A3C',
+        'levv-heide': '#755F68',
+        'levv-klei': 'CAC6C2'
       },
       // boxShadow: {
       //   '3xl': '0 8px 6px -6px rgba(0, 0, 0, 0.1)',
