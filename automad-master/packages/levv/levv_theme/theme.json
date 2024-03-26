@@ -1,8 +1,8 @@
 {
-	"name": "Light",
-	"description": "A light and elegant multi-purpose theme",
-	"author": "Marc Anton Dahmen",
-	"version": "1.10.9",
+	"name": "Levv Consulting",
+	"description": "Custom theme created for Levv Consulting",
+	"author": "Ivor Grisel",
+	"version": "1",
 	"license": "MIT",
 	"masks": {
 		"page": [

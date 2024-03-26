@@ -11,3 +11,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'quicksand-light';
+		font-display: swap;
+		src: url('../fonts/quicksand/static/Quicksand-Light.ttf') format('truetype');
+	}
+	
+	@font-face {
+		font-family: 'quicksand';
+		font-display: swap;
+		src: url('../fonts/quicksand/static/Quicksand-Regular.ttf') format('truetype');
+	}
+	
+	@font-face {
+		font-family: 'quicksand-semi';
+		font-display: swap;
+		src: url('../fonts/quicksand/static/Quicksand-SemiBold.ttf') format('truetype');
+	}
+	
+	@font-face {
+		font-family: 'quicksand-bold';
+		font-display: swap;
+		src: url('../fonts/quicksand/static/Quicksand-Bold.ttf') format('truetype');
+	}
+	
+	@font-face {
+		font-family: 'passageway-light';
+		font-display: swap;
+		src: url('../fonts/passageway/PassagewayLight.woff') format('woff');
+	}
+	
+	@font-face {
+		font-family: 'passageway-bold';
+		font-display: swap;
+		src: url('../fonts/passageway/PassagewayBd.woff') format('woff');
+	}
+}

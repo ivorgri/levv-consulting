@@ -1,51 +1,41 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./packages/levv/levv_theme/**/*.{php,html,js}"],
+  content: ["./automad-master/packages/levv/levv_theme/**/*.{php,html,js}"],
   theme: {
     extend: {
-      // fontFamily: {
-      //   'revicons': ['revicons'],
-      //   'lato': ['Lato'],
-      //   'logo': ['"Oooh Baby"'],
-      // },
+      fontFamily: {
+        'quicksand-light': ['quicksand-light'],
+        'quicksand': ['quicksand'],
+        'quicksand-semibold': ['quicksand-semibold'],
+        'quicksand-bold': ['quicksand-bold'],
+        'passageway-light': ['passageway-light','sans-serif'],
+        'passageway-bold': ['passageway-bold','sans-serif']
+      },
       colors: {
         'levv-turqouise': '#00889A',
         'levv-korenblauw': '#004E91',
         'levv-dieppaars': '#472553',
         'levv-wijnrood': '#880A3C',
         'levv-heide': '#755F68',
-        'levv-klei': 'CAC6C2'
+        'levv-klei': '#CAC6C2',
+        // 'levv-klei-background': '#CAC6C240', //Added Alpha value of 25%
+        'levv-klei-background': '#f1f0ef',
+        'levv-dieppaars-about-us': '#472553BF', //Added Alpha value of 75%
+        'levv-korenblauw-about-us': '#004E91BF', //Added Alpha value of 75%
+        'levv-wijnrood-homepage-card': '#880A3CE6', //Added Alpha value of 75%
       },
-      // boxShadow: {
-      //   '3xl': '0 8px 6px -6px rgba(0, 0, 0, 0.1)',
-      // },
-      // maxWidth: {
-      //   '3/4': '75%',
-      // },
-      // spacing: {
-      //   '128': '32rem',
-      //   '30': '7.5rem',
-      //   'header': '7.5rem',
-      //   'slider': 'calc(100vh - 7.5rem)',
-      //   'mobile-header': '5rem',
-      //   'mobile-slider': 'calc(100vh - 5rem)'
-      // },
-      // scrollMargin: {
-      //   '30': '7.5rem',
-      //   'header': '10rem',
-      //   'mobile-header': '5.5rem'
-      // },
-      // gridTemplateRows: {
-      //   '12': 'repeat(12, minmax(0, 1fr))',
-      // },
-      // gridRowEnd: {
-      //   '11': '11',
-      //   '13': '13',
-      // },
-      // rotate: {
-      //   '270': '270deg'
-      // }
+      gridTemplateRows: {
+        'levv-about-us': 'min-content 7rem 2.5rem min-content',
+        'levv-about-us-md': 'min-content 7rem 2.5rem min-content',
+        'levv-homepage-card': '50% 1fr min-content'
+      },
+      strokeWidth: {
+        '3': '3px'
+      },
+      width: {
+        'homepage-card': '350px',
+        'homepage-card-md': '500px'
+      }
     }
   },
-  // plugins: [require("daisyui")],
 }
