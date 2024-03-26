@@ -11,7 +11,7 @@
 		<!-- <link rel="stylesheet" href="/packages/@{ theme }/fonts/font-awesome.css" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css"> -->
 		<!-- <link rel="stylesheet" href="/packages/@{ theme }/fonts/elegant-fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css"> -->
 		<link rel="stylesheet" href="/packages/@{ theme }/dist/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css">
-		<!-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&amp;family=Oooh+Baby&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+		<!-- <link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
 		<!-- <link rel="apple-touch-icon" sizes="180x180" href="/shared/apple-touch-icon.png"> -->
 		<!-- <link rel="icon" type="image/png" sizes="32x32" href="/shared/favicon-32x32.png"> -->
 		<!-- <link rel="icon" type="image/png" sizes="16x16" href="/shared/favicon-16x16.png"> -->
@@ -20,7 +20,11 @@
 		<!-- <meta name="msapplication-TileColor" content="#da532c"> -->
 		<meta name="theme-color" content="#ffffff">
 	</head>
-	<body class="bg-white flex flex-wrap items-center m-0 p-0 w-full overflow-x-hidden font-lato">
+	<body class="bg-levv-klei-background flex flex-wrap flex-col items-center m-0 p-0 w-full overflow-x-hidden font-quicksand-light">
+		<header class="w-full flex flex-row p-10 h-28 fixed bg-gradient-to-r from-levv-korenblauw to-levv-dieppaars text-white z-50">
+			<h1>@{ sitename }</h1>
+			<@ /navbar.php @>
+		</header>
 		<!-- <header class="w-full h-mobile-header md:h-header flex-col items-center fixed top-0 bg-white shadow-3xl z-20 md:flex
 		sm:flex sm:py-5
 		md:py-3">
@@ -41,6 +45,6 @@
 						<a href="mailto:info@supervisievoorjou.nl">info@supervisievoorjou.nl</a>
 					</span>
 				</div>
-				<@ /navbar.php @>
+				
 			</div>
 		</header> -->

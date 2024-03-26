@@ -9,3 +9,7 @@ automad-master/**
 !automad-master/packages/levv/
 !automad-master/packages/levv/levv_theme/
 !automad-master/packages/levv/levv_theme/**
+automad-master/packages/levv/levv_theme/fonts
+
+# Archive
+archive
