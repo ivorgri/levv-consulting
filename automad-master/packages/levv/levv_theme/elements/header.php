@@ -21,7 +21,7 @@
 		<meta name="theme-color" content="#ffffff">
 	</head>
 	<body class="bg-levv-klei-background flex flex-wrap flex-col items-center m-0 p-0 w-full overflow-x-hidden font-quicksand-light">
-		<header class="w-full flex flex-row p-10 h-28 fixed bg-gradient-to-r from-levv-korenblauw to-levv-dieppaars text-white z-50">
+		<header class="w-full flex flex-row p-10 h-20 fixed bg-gradient-to-r from-levv-korenblauw to-levv-dieppaars text-white z-50">
 			<h1>@{ sitename }</h1>
 			<@ /navbar.php @>
 		</header>
