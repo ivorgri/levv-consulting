@@ -1,5 +1,6 @@
 @{ title }
-@{ organization }
+@{ text-organization }
+@{ text-function }
 @{ +description }
 @{ text-referral-person-1 }
 @{ text-referral-text-1 }
@@ -7,3 +8,6 @@
 @{ text-referral-person-2 }
 @{ text-referral-text-2 }
 @{ url-referral-text-2 }
+@{ text-referral-person-3 }
+@{ text-referral-text-3 }
+@{ url-referral-text-3 }

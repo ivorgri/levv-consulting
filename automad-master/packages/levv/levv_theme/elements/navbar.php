@@ -1,6 +1,7 @@
 <@ newPagelist { 
     type: 'children', 
-    context: '/' 
+    context: '/' ,
+    excludeHidden: true
 } @>
 <nav class="grow flex flex-row justify-end">
     <!-- MOBILE MENU -->
