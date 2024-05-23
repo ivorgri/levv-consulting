@@ -20,9 +20,6 @@ The snippet can be overriden before including the actual template in order to ex
 				<button :id="assignmentTag.id" type="radio" :value="assignmentTag.value" @click="updateAssignmentsList" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-xl uppercase p-3" :class="assignmentTag.value === store.selectedAssignmentTag ? 'border-levv-wijnrood' : ''">{{ assignmentTag.label }}</button>
             </li>
 		</ul>
-		<script>
-			
-		</script>
 	</template>
 
 	<template id="assignment-filtered-list-template">
@@ -78,62 +75,6 @@ The snippet can be overriden before including the actual template in order to ex
 						<span class="text-xl">~</span>
 					</div>
 				</div>
-				<!-- <div class="levv-assignment-header-border border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-korenblauw col-start-1 col-end-7 row-start-2 row-end-5 bg-levv-klei-background z-10">
-				</div>
-				<div class="levv-assignment-header-empty col-start-3 col-end-5 row-start-1 row-end-3 bg-levv-klei-background z-10">
-				</div>
-				<h2 class="levv-assignment-header-title text-3xl font-passageway-bold col-start-2 col-end-6 row-start-3 row-end-4 text-levv-wijnrood text-center bg-levv-klei-background z-10">{{ assignment.title }}</h2>
-				<h3 class="levv-assignment-header-function text-xl font-passageway-bold col-start-2 col-end-6 row-start-4 row-end-6 bg-levv-klei-background text-center content-center px-3 z-10">{{ assignment.function }}</h3>
-				<div class="levv-assignment-body-border border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-turqouise col-start-3 col-end-9 row-start-4 row-end-8">
-				</div>
-				<div class="levv-assignment-body-content ml-[25px] col-start-3 col-end-8 row-start-6 row-end-7 h-fit min-h-fit" v-html="assignment.description"></div>
-				<div class="levv-assignment-body-border border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-klei col-start-1 col-end-7 row-start-4 row-end-10">
-				</div> -->
-				<!-- <div v-if="assignment.tags.includes(store.selectedAssignmentTag) || store.selectedAssignmentTag === 'all'" class="flex flex-row gap-4">
-					<div class="grow p-5 bg-levv-wijnrood-homepage-card text-levv-klei w-assignment-card md:max-w-assignment-card-md md:min-w-assignment-card-md flex flex-col gap-3">
-						<h2 class="text-3xl font-passageway-bold">{{ assignment.title }}</h2>
-						<span class="text-xl">
-							{{ assignment.organization }}
-						</span>
-						<span class="text-xl">
-							{{ assignment.function }}
-						</span>
-					</div>
-					<div class="grow p-5" v-html="assignment.description"></div>
-					<div class="grow min-w-36 w-1/4">Right</div>
-				</div>
-				<div class="grow flex flex-col text-levv-klei bg-levv-turqouise p-5">
-					<div v-if="assignment.referral_1_text">
-						<span class="text-2xl">"</span> 
-						<p>{{ assignment.referral_1_text }}</p>
-						<span class="text-2xl">"</span>
-					</div>
-					<div class="flex flex-row items-center gap-2 justify-end">
-						<span class="text-xl">~</span> 
-						<span>{{ assignment.referral_1 }}</span>
-						<span class="text-xl">~</span>
-					</div>
-					<div v-if="assignment.referral_2_text">
-						<span class="text-2xl">"</span>
-						<p>{{ assignment.referral_2_text }}</p>
-						<span class="text-2xl">"</span>
-					</div>
-					<div v-if="assignment.referral_2" class="flex flex-row items-center gap-2 justify-end">
-						<span class="text-xl">~</span> 
-						<span>{{ assignment.referral_2 }}</span>
-						<span class="text-xl">~</span>
-					</div>
-					<div v-if="assignment.referral_3_text">
-						<span class="text-2xl">"</span>
-						<p>{{ assignment.referral_3_text }}</p>
-						<span class="text-2xl">"</span>
-					</div>
-					<div v-if="assignment.referral_3" class="flex flex-row items-center gap-2 justify-end">
-						<span class="text-xl">~</span> 
-						<span>{{ assignment.referral_3 }}</span>
-						<span class="text-xl">~</span>
-					</div>
-				</div> -->
 			</li>
 		</ul>
     </template>
@@ -163,13 +104,6 @@ The snippet can be overriden before including the actual template in order to ex
 			cost_remark: ''
 		},
 		{
-			id: 'interim',
-			label: 'interim',
-			value: 'interim',
-			cost: '95,00',
-			cost_remark: 'Uurtarief in overleg (afhankelijk van de soort opdracht)'
-		},
-		{
 			id: 'groeien',
 			label: 'groeien',
 			value: 'groeien',
@@ -183,6 +117,13 @@ The snippet can be overriden before including the actual template in order to ex
 			cost: '95,00',
 			cost_remark: ''
 		},
+		{
+			id: 'interim',
+			label: 'interim',
+			value: 'interim',
+			cost: '95,00',
+			cost_remark: 'Uurtarief in overleg (afhankelijk van de soort opdracht)'
+		}
 	]
 	const assignments = [
 	<@ foreach in pagelist @>
