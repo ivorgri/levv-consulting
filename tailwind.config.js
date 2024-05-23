@@ -23,14 +23,23 @@ module.exports = {
         'levv-dieppaars-about-us': '#472553BF', //Added Alpha value of 75%
         'levv-korenblauw-about-us': '#004E91BF', //Added Alpha value of 75%
         'levv-wijnrood-homepage-card': '#880A3CE6', //Added Alpha value of 75%
+        'levv-klei-header-background': '#f1f0efBF',
       },
       gridTemplateColumns: {
         // 'levv-assignment-block': '25px 25px auto auto 25px 25px auto 25px',
+        'levv-menu': '50px auto 50px',
+        'levv-menu-closed': 'auto auto 50px',
+        'levv-menu-item': '25px auto',
+        'levv-header-contact': '15px auto 15px',
         'levv-assignment-block': '25px auto 25px auto 1fr 25px',
         'levv-assignment-header': '25px auto 25px',
         'levv-assignment-body': '25px auto 25px'
       },
       gridTemplateRows: {
+        'levv-menu': '50px auto 50vh',
+        'levv-menu-closed': 'auto auto 50px',
+        'levv-menu-item': '25px auto',
+        'levv-header-contact': '15px auto 15px',
         'levv-about-us': 'min-content 7rem 2.5rem min-content',
         'levv-about-us-md': 'min-content 7rem 2.5rem min-content',
         'levv-homepage-card': '50% 1fr min-content',
