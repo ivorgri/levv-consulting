@@ -21,7 +21,7 @@
 		<meta name="theme-color" content="#ffffff">
 	</head>
 	<body class="bg-levv-klei-background flex flex-wrap flex-col items-center m-0 p-0 w-full overflow-x-hidden font-quicksand-light">
-		<header class="w-full grid grid-rows-1 grid-cols-3 h-[98px] p-2 fixed bg-levv-klei-header-background text-levv-wijnrood z-50">
+		<header id="levv-header" class="w-full grid grid-rows-1 grid-cols-3 h-[98px] p-2 fixed bg-levv-klei-header-background text-levv-wijnrood z-50">
 			<!-- <h1>@{ sitename }</h1> -->
 			<!-- <div class="h-full flex flex-row items-center pl-5 font-passageway-bold">
 				<a href="/contact-met-mij">Start samenwerking</a>
