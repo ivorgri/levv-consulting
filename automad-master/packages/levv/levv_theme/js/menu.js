@@ -1,6 +1,5 @@
 const toggleMenuButton = document.getElementById("levv-toggle-menu");
 const navBar = document.getElementById("levv-nav-bar");
-console.log(navBar)
 const menuItemsArray = document.getElementsByClassName("levv-menu-opened");
 
 toggleMenuButton.addEventListener("click",()=>{

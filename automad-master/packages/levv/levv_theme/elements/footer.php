@@ -40,7 +40,6 @@
                     ?> | Alle rechten voorbehouden</span>
             </div>    
         </footer>
-        <script src="/packages/@{theme}/js/mobile_menu.js" async></script>
         <script src="/packages/@{theme}/js/menu.js" async></script>
         <@ if @{ :origUrl } @>
             <!-- <script src="/packages/@{theme}/js/homepage_slider.js" async></script>
@@ -48,7 +47,6 @@
             <script src="/packages/@{theme}/js/supervisor_modal.js" async></script>    -->
         <@ else @>
             <script src="/packages/@{theme}/js/automatic_redirect.js" async></script>
-            <script src="/packages/@{theme}/js/mobile_menu.js" async></script>
             <script src="/packages/@{theme}/js/menu.js" async></script>         
         <@ end @>
         <!-- <script>
