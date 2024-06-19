@@ -26,11 +26,12 @@ module.exports = {
         'levv-klei-header-background': '#f1f0efBF',
       },
       gridTemplateColumns: {
-        // 'levv-assignment-block': '25px 25px auto auto 25px 25px auto 25px',
         'levv-menu': '50px auto 50px',
         'levv-menu-closed': 'auto auto 50px',
         'levv-menu-item': '25px auto',
         'levv-header-contact': '15px auto 15px',
+        'levv-homepage-section-filter': '25px auto 25px',
+        'levv-homepage-section-content': '1fr 25px 4px 25px 70% 25px 25px 1fr',
         'levv-assignment-block': '25px auto 25px auto 1fr 25px',
         'levv-assignment-header': '25px auto 25px',
         'levv-assignment-body': '25px auto 25px'
@@ -43,7 +44,8 @@ module.exports = {
         'levv-about-us': 'min-content 7rem 2.5rem min-content',
         'levv-about-us-md': 'min-content 7rem 2.5rem min-content',
         'levv-homepage-card': '50% 1fr min-content',
-        // 'levv-assignment-block': '25px 25px auto 25px 25px auto 25px auto 25px',
+        'levv-homepage-section-filter': '25px auto 25px',
+        'levv-homepage-section-content': '75px 75px auto',
         'levv-assignment-block': 'auto 25px auto 25px auto',
         'levv-assignment-header': '25px auto 25px',
         'levv-assignment-body': '45px auto auto 25px'
