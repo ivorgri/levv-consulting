@@ -5,16 +5,16 @@ Define the default main snippet to display the actual content.
 The snippet can be overriden before including the actual template in order to extend a template.
 
 #>
-<main class="w-full flex flex-col items-center p-36">
+<main class="w-full flex flex-col items-center px-8 py-36 md:p-36">
 	<h1 class="text-5xl p-6 text-center font-passageway-bold">@{ title }</h1>
-	<div>@{ +main }</div>
+	<div class="text-lg">@{ +main }</div>
 
 	<div id="assignment-tag-filter" v-scope="AssignmentTagFilter()" class="flex"></div>
 	<div id="assignment-filtered-list" v-scope="AssignmentFilteredList()" class="flex w-full"></div>
 
 	<template id="assignment-tag-filter-template">
-		<ul class="flex row gap-6 my-8">
-			<li class="text-3xl grid grid-cols-levv-assignment-header grid-rows-levv-assignment-header transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="assignmentTag in store.assignmentTags">
+		<ul class="flex row flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 my-8">
+			<li class="text-xl lg:text-3xl grid grid-cols-levv-assignment-header grid-rows-levv-assignment-header transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="assignmentTag in store.assignmentTags">
 				<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
 				</div>
 				<button :id="assignmentTag.id" type="radio" :value="assignmentTag.value" @click="updateAssignmentsList" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-xl uppercase p-3" :class="assignmentTag.value === store.selectedAssignmentTag ? 'border-levv-wijnrood' : ''">{{ assignmentTag.label }}</button>

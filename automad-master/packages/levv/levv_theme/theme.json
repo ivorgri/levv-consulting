@@ -32,6 +32,8 @@
 		]
 	},
 	"tooltips": {
+		"levvMailAddress": "The Levv general mail address",
+		"levvPhoneNumber": "0612123434",
 		"+hero": "The hero section",
 		"+main": "The main content block area",
 		"brand": "The brand HTML, SVG or text to be used as logo",
