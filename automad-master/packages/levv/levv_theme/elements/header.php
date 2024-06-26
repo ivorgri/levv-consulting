@@ -21,15 +21,22 @@
 		<meta name="theme-color" content="#ffffff">
 	</head>
 	<body class="bg-levv-klei-background flex flex-wrap flex-col items-center m-0 p-0 w-full overflow-x-hidden font-quicksand-light">
-		<header id="levv-header" class="w-full grid grid-rows-1 grid-cols-3 h-[98px] p-2 fixed bg-levv-klei-header-background text-levv-wijnrood z-50">
+		<header id="levv-header" class="w-full grid grid-rows-1 grid-cols-3 h-[98px] md:p-2 fixed bg-levv-klei-header-background text-levv-wijnrood z-50">
 			<!-- <h1>@{ sitename }</h1> -->
 			<!-- <div class="h-full flex flex-row items-center pl-5 font-passageway-bold">
 				<a href="/contact-met-mij">Start samenwerking</a>
 			</div> -->
-			<div class="group text-lg lowercase pl-5 font-semibold grid grid-cols-levv-header-contact grid-rows-levv-header-contact w-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105 content-center">
+			<div class="group text-xs md:text-base lg:text-lg lowercase pl-5 font-semibold grid grid-cols-levv-header-contact grid-rows-levv-header-contact w-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105 content-center">
                 <div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative h-[10px] -top-[5px] justify-self-center bg-levv-klei-background">
                 </div>
-                <a href="/contact-met-mij" class="h-fit col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-transparent border-4 rounded-tl-xl rounded-br-xl uppercase p-2 group-hover:border-levv-klei group-focus:border-levv-klei">Start samenwerking</a>
+				<@ newPagelist { 
+					type: 'children', 
+					context: '/',
+					filter: 'contact'
+				} @>
+				<@ foreach in pagelist @>
+                	<a href="@{ url }" class="h-fit text-xs md:text-base lg:text-lg col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-transparent border-2 md:border-4 rounded-tl-xl rounded-br-xl uppercase p-1 md:p-2 group-hover:border-levv-klei group-focus:border-levv-klei">Start samenwerking</a>
+				<@ end @>
 			</div>
 			<div class="h-full flex flex-row justify-center items-center">
 				<a href="/" class="h-full">
