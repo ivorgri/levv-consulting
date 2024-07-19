@@ -5,9 +5,9 @@ Define the default main snippet to display the actual content.
 The snippet can be overriden before including the actual template in order to extend a template.
 
 #>
-<main class="w-full flex flex-col items-center px-8 p-6 lg:py-36">
-	<h1 class="text-5xl p-6 text-center font-passageway-bold">@{ title }</h1>
-	<div class="text-lg">@{ +main }</div>
+<main class="w-full flex flex-col items-center px-8 lg:px-36 pb-6 mt-levv-header">
+	<h1 class="text-3xl lg:text-5xl p-6 text-center font-passageway-bold">@{ title }</h1>
+	<div class="text-base lg:text-lg">@{ +main }</div>
 
 	<div id="assignment-tag-filter" v-scope="AssignmentTagFilter()" class="flex"></div>
 	<div id="assignment-filtered-list" v-scope="AssignmentFilteredList()" class="flex w-full"></div>
@@ -35,12 +35,10 @@ The snippet can be overriden before including the actual template in order to ex
 				</div>
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-turqouise bg-levv-klei-background col-start-2 col-end-6 row-start-2 row-end-5 grid grid-cols-levv-assignment-body grid-rows-levv-assignment-body z-10">
 					<div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg" v-html="assignment.description"></div>
-					<div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around mt-6 gap-3">
-						<img v-for="assignment_image in assignment.images" class="" 
+					<div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around my-6 gap-3">
+						<img v-for="assignment_image in assignment.images" class="max-h-16 lg:max-h-36" 
 							:src="'' + assignment_image.image_src"
-							:alt="assignment_image.image_alt"
-							:height="assignment_image.image_height"
-							:width="assignment_image.image_width"/>
+							:alt="''+ assignment_image.image_alt"/>
 					</div>
 				</div>
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-klei bg-levv-klei-background col-start-1 lg:col-start-5 col-end-7 row-start-4 row-end-6 p-[25px]">
@@ -157,7 +155,7 @@ The snippet can be overriden before including the actual template in order to ex
 						'image_alt':'@{ :caption }',
 						'image_height':'@{ :height }',
 						'image_width':'@{ :width }',
-					}
+					},
 				<@ end @>
 			]
 		},

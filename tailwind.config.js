@@ -52,6 +52,9 @@ module.exports = {
         'levv-assignment-header': '25px auto 25px',
         'levv-assignment-body': '45px auto auto 25px'
       },
+      margin: {
+        'levv-header': '98px',
+      },
       strokeWidth: {
         '3': '3px'
       },

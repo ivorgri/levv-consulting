@@ -6,7 +6,7 @@ The snippet can be overriden before including the actual template in order to ex
 
 #>
 <main class="w-full flex flex-col items-center">
-	<div id="levv-question" class="w-full flex flex-col items-center fixed mt-[98px] bg-levv-klei-header-background">
+	<div id="levv-question" class="w-full flex flex-col items-center fixed mt-levv-header bg-levv-klei-header-background">
 		<h1 class="text-xl lg:text-5xl p-2 lg:p-0"><span>Welke uitdaging wil je aangaan </span><span class="text-levv-wijnrood font-bold text-2xl lg:text-6xl">met Levv?</span></h1>
 		<ul class="flex flex-wrap gap-2 lg:gap-6 m-4 justify-center">
 			<@ newPagelist {
