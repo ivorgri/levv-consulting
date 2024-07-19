@@ -43,10 +43,15 @@ The snippet can be overriden before including the actual template in order to ex
 	<@ end @>
 	
 	<script>
-		const emptySpace = document.getElementById("levv-empty-space");
-		const question = document.getElementById("levv-question");
-		const questionSize = question.getBoundingClientRect().bottom
-		emptySpace.setAttribute("style",`height:${questionSize}px`)
+		function resizeEmptySpace() {
+			const emptySpace = document.getElementById("levv-empty-space");
+			const question = document.getElementById("levv-question");
+			const questionSize = question.getBoundingClientRect().bottom
+			emptySpace.setAttribute("style",`height:${questionSize}px`)
+		}
+
+		addEventListener("resize", (event) => resizeEmptySpace());
+
 
 		function scrollToSection(sectionId) {
 			const section = document.getElementById(sectionId);
