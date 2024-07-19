@@ -14,7 +14,7 @@ The snippet can be overriden before including the actual template in order to ex
 
 	<template id="assignment-tag-filter-template">
 		<ul class="flex row flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 my-8">
-			<li class="text-xl lg:text-3xl grid grid-cols-levv-assignment-header grid-rows-levv-assignment-header transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="assignmentTag in store.assignmentTags">
+			<li class="text-xl lg:text-3xl grid grid-cols-levv-assignment-filter-header grid-rows-levv-assignment-filter-header transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="assignmentTag in store.assignmentTags">
 				<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
 				</div>
 				<button :id="assignmentTag.id" type="radio" :value="assignmentTag.value" @click="updateAssignmentsList" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-xl uppercase p-3" :class="assignmentTag.value === store.selectedAssignmentTag ? 'border-levv-wijnrood' : ''">{{ assignmentTag.label }}</button>
