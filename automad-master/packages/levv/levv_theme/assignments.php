@@ -5,7 +5,7 @@ Define the default main snippet to display the actual content.
 The snippet can be overriden before including the actual template in order to extend a template.
 
 #>
-<main class="w-full flex flex-col items-center px-8 py-36 md:p-36">
+<main class="w-full flex flex-col items-center px-8 p-6 lg:py-36">
 	<h1 class="text-5xl p-6 text-center font-passageway-bold">@{ title }</h1>
 	<div class="text-lg">@{ +main }</div>
 
@@ -28,19 +28,22 @@ The snippet can be overriden before including the actual template in order to ex
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-korenblauw bg-levv-klei-background col-start-1 col-end-4 row-start-1 row-end-3 z-20 grid grid-cols-levv-assignment-header grid-rows-levv-assignment-header">
 					<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
 					</div>
-					<h2 class="col-start-2 col-end-2 row-start-2 row-end-2 text-3xl font-passageway-bold text-levv-wijnrood text-center">{{ assignment.title }}</h2>
+					<h2 class="col-start-2 col-end-2 row-start-2 row-end-2 text-xl lg:text-3xl font-passageway-bold text-levv-wijnrood text-center">{{ assignment.title }}</h2>
 					<div class="col-start-1 col-end-4 row-start-1 row-end-4 flex flex-col justify-end">
-						<h3 class="text-xl font-passageway-bold text-center content-center bg-levv-klei-background relative -bottom-[15px] px-[7px] mx-[35px]">{{ assignment.function }}</h3>
+						<h3 class="text-base lg:text-xl font-passageway-bold text-center content-center bg-levv-klei-background relative -bottom-[15px] px-[7px] mx-[35px]">{{ assignment.function }}</h3>
 					</div>
 				</div>
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-turqouise bg-levv-klei-background col-start-2 col-end-6 row-start-2 row-end-5 grid grid-cols-levv-assignment-body grid-rows-levv-assignment-body z-10">
-					<div class="col-start-2 col-end-3 row-start-2 row-end-3 text-lg" v-html="assignment.description"></div>
-					<div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row justify-around mt-6 h-60">
-						<img src="https://picsum.photos/200/300"/>
-						<img src="https://picsum.photos/400/200"/>
+					<div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg" v-html="assignment.description"></div>
+					<div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around mt-6 gap-3">
+						<img v-for="assignment_image in assignment.images" class="" 
+							:src="'' + assignment_image.image_src"
+							:alt="assignment_image.image_alt"
+							:height="assignment_image.image_height"
+							:width="assignment_image.image_width"/>
 					</div>
 				</div>
-				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-klei bg-levv-klei-background col-start-5 col-end-7 row-start-4 row-end-6 p-[25px]">
+				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-klei bg-levv-klei-background col-start-1 lg:col-start-5 col-end-7 row-start-4 row-end-6 p-[25px]">
 					<div v-if="assignment.referral_1_text">
 						<span class="text-2xl">"</span> 
 						<p class="text-lg">{{ assignment.referral_1_text }}</p>
@@ -142,10 +145,25 @@ The snippet can be overriden before including the actual template in order to ex
 			'referral_2_url':'@{ url-referral-text-2 }',
 			'referral_3':'@{ text-referral-person-3 }',
 			'referral_3_text':'@{ text-referral-text-3 }',
-			'referral_3_url':'@{ url-referral-text-3 }'
+			'referral_3_url':'@{ url-referral-text-3 }',
+			'images': [
+				<@ filelist { 
+					glob: @{ files | def ('*.png, *.jpg, *.svg') },
+					sort: 'asc'
+				} @>
+				<@ foreach in filelist { width: :width } @>
+					{
+						'image_src':'@{ :file }',
+						'image_alt':'@{ :caption }',
+						'image_height':'@{ :height }',
+						'image_width':'@{ :width }',
+					}
+				<@ end @>
+			]
 		},
 	<@ end @>
 	]
+	console.log(assignments);
 
 	let selectedAssignments = assignments;
 </script>
