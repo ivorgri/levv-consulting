@@ -15,7 +15,7 @@ The snippet can be overriden before including the actual template in order to ex
 				context: "/homepage-sections",
 			} @>
 			<@ foreach in pagelist @>
-				<li class="group text-xl lg:text-3xl grid grid-cols-levv-homepage-section-filter grid-rows-levv-homepage-section-filter transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105">
+				<li class="group text-xl lg:text-3xl grid grid-cols-levv-homepage-section-filter grid-rows-levv-homepage-section-filter transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105 focus:scale-105">
 					<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center"></div>
 					<button value="levv-section-@{ :i }" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-xl uppercase p-3 transition ease-in-out delay-125 group-hover:border-levv-wijnrood" onclick="scrollToSection(this.value)">@{ title }</button>
 				</li>
@@ -43,15 +43,17 @@ The snippet can be overriden before including the actual template in order to ex
 	<@ end @>
 	
 	<script>
+		const emptySpace = document.getElementById("levv-empty-space");
+		const question = document.getElementById("levv-question");
+		let questionSize = question.getBoundingClientRect().bottom
+
 		function resizeEmptySpace() {
-			const emptySpace = document.getElementById("levv-empty-space");
-			const question = document.getElementById("levv-question");
-			const questionSize = question.getBoundingClientRect().bottom
+			questionSize = question.getBoundingClientRect().bottom
 			emptySpace.setAttribute("style",`height:${questionSize}px`)
 		}
-
+		
+		resizeEmptySpace();
 		addEventListener("resize", (event) => resizeEmptySpace());
-
 
 		function scrollToSection(sectionId) {
 			const section = document.getElementById(sectionId);
