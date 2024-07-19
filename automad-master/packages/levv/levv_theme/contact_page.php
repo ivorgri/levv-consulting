@@ -1,9 +1,9 @@
 <@ elements/header.php @>
 
-<main class="w-full flex flex-col gap-4 items-center px-8 py-36 md:p-36 lg:w-3/4">
-	<h1 class="text-5xl p-6 text-center font-passageway-bold">@{ title }</h1>
-    <div class="text-lg">@{ +main }</div>
-    <div class="text-lg flex flex-col">
+<main class="w-full flex flex-col gap-4 items-center px-8 lg:px-36 pb-10 mt-levv-header lg:w-3/4">
+	<h1 class="text-3xl lg:text-5xl p-6 text-center font-passageway-bold">@{ title }</h1>
+    <div class="text-base lg:text-lg">@{ +main }</div>
+    <div class="text-base lg:text-lg flex flex-col">
         <div class="flex flex-row gap-2">
             <span>Direct mailen kan naar:</span><a class="text-levv-korenblauw underline" href="mailto:@{ levvMailAddress }">@{ levvMailAddress }</a>
         </div>
@@ -11,7 +11,7 @@
             <span>Mocht je liever bellen:</span><a class="text-levv-korenblauw underline" href="tel:@{ levvPhoneNumber }">@{ levvPhoneNumber }</a>
         </div>
     </div>
-    <form method="POST" id="contact-form" class="text-xl flex flex-wrap gap-5">
+    <form method="POST" id="contact-form" class="text-base lg:text-lg flex flex-wrap gap-5">
         <fieldset class="flex flex-wrap items-center justify-left gap-5">
             <input type="text" name="name" id="name" class="border border-black/10 p-2 grow bg-white" placeholder="@{ placeholder_name }" required>
             <input type="email" name="email" id="email" class="border border-black/10 p-2 grow-[3] bg-white" placeholder="@{ placeholder_email }" required>
