@@ -13,7 +13,8 @@ function email(data) {
         "email":data.get("email"),
         "message":data.get("message")
     };
-    fetch("/svj-form/send.php", {
+    console.log(body)
+    fetch("/packages/levv/levv_theme/php/send.php", {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
@@ -22,12 +23,14 @@ function email(data) {
     })
     .then(response => response.json())
     .then(response => {
+        console.log("Response");
         const messageTitle = document.getElementById("info-message-title")
         messageTitle.innerHTML = response.message
         const message = document.getElementById("info-message")
         message.classList.remove('hidden');
         const contactForm = document.getElementById("contact-form");
         contactForm.classList.add('hidden');
+        // console.log(response);
     })
     .catch(error => {
         error.json().then(response => {
