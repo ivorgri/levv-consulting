@@ -25,7 +25,8 @@
             <script src="/packages/@{theme}/js/contact_form.js" async></script>
         <@ else @>
             <script src="/packages/@{theme}/js/automatic_redirect.js" async></script>
-            <script src="/packages/@{theme}/js/menu.js" async></script>         
+            <script src="/packages/@{theme}/js/menu.js" async></script>
+            <script src="/packages/@{theme}/js/contact_form.js" async></script>
         <@ end @>
         <!-- <script>
             const links = document.querySelectorAll('[href*="://"]');

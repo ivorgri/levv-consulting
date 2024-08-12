@@ -2,6 +2,9 @@
 node_modules/
 .vscode/
 
+# Ivor
+TODO.md
+
 # Automad
 automad-master.zip
 automad-master/**
@@ -10,6 +13,8 @@ automad-master/**
 !automad-master/packages/levv/levv_theme/
 !automad-master/packages/levv/levv_theme/**
 automad-master/packages/levv/levv_theme/fonts
+automad-master/packages/levv/levv_theme/php
+automad-master/packages/levv/levv_theme/php/src
 
 # Archive
 archive

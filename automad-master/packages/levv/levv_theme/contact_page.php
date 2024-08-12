@@ -11,6 +11,14 @@
             <span>Mocht je liever bellen:</span><a class="text-levv-korenblauw underline" href="tel:@{ levvPhoneNumber }">@{ levvPhoneNumber }</a>
         </div>
     </div>
+    <div id="info-message" class="border border-green-600 rounded-3xl py-2 px-5 hidden">
+        <h3 id="info-message-title" class="text-lg text-green-600
+            md:text-xl">Succes!</h3>
+    </div>
+    <div id="error-message" class="border border-red-600 rounded-3xl py-2 px-5 hidden">
+        <h3 id="error-message-title" class="text-lg text-red-600
+            md:text-xl">Foutmelding</h3>
+    </div>
     <form method="POST" id="contact-form" class="text-base lg:text-lg flex flex-wrap gap-5">
         <fieldset class="flex flex-wrap items-center justify-left gap-5">
             <input type="text" name="name" id="name" class="border border-black/10 p-2 grow bg-white" placeholder="@{ placeholder_name }" required>

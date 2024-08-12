@@ -24,7 +24,7 @@ The snippet can be overriden before including the actual template in order to ex
 	</div>
 	<div id="levv-empty-space"></div>
 	<@ foreach in pagelist @>
-		<div id="levv-section-@{ :i }" class="h-screen w-screen grid grid-cols-levv-homepage-section-content grid-rows-levv-homepage-section-content">
+		<section id="levv-section-@{ :i }" class="h-screen w-screen grid grid-cols-levv-homepage-section-content grid-rows-levv-homepage-section-content">
 			<div class="col-start-1 col-span-1 row-start-2 row-end-3 border-solid border-b-4 border-levv-korenblauw"></div>
 			<div class="col-start-2 col-span-2 row-start-2 row-end-3 border-solid border-r-4 border-b-4 rounded-br-xl  border-levv-korenblauw"></div>
 			<div class="col-start-3 col-span-2 row-start-1 row-end-2 border-solid border-l-4 border-t-4 rounded-tl-xl  border-levv-korenblauw"></div>
@@ -33,7 +33,7 @@ The snippet can be overriden before including the actual template in order to ex
 				<div class="text-base lg:text-xl">@{ +cornerstone_description }</div>
 			</div>
 			<div class="col-start-6 col-span-2 row-start-1 row-end-2 border-solid border-t-4  border-levv-korenblauw"></div>
-		</div>
+		</section>
 	<@ end @>
 	
 	<script>
