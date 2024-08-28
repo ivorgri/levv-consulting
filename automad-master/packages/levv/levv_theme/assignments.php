@@ -34,11 +34,27 @@ The snippet can be overriden before including the actual template in order to ex
 					</div>
 				</div>
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-turqouise bg-levv-klei-background col-start-2 col-end-6 row-start-2 row-end-5 grid grid-cols-levv-assignment-body grid-rows-levv-assignment-body z-10">
-					<div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg" v-html="assignment.description"></div>
-					<div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around my-6 gap-3">
+					<!-- <div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg" v-html="assignment.description"></div> -->
+					<!-- <div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around my-6 gap-3">
 						<img v-for="assignment_image in assignment.images" class="max-h-16 lg:max-h-36" 
 							:src="'' + assignment_image.image_src"
 							:alt="''+ assignment_image.image_alt"/>
+					</div> -->
+					<div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg flex flex-col">
+						<!-- <div class="assignment-row"></div> -->
+						<!-- <div class="assignment-row"></div> -->
+						<div v-for="(row, index) in assignment.rows" class="assignment-row flex justify-center items-center flex-wrap">
+							<div v-for="row_item in row" 
+								class="assignment-row-element grow odd:order-2 even:order-1"
+								:class="[row.length === 1 ? 'w-full' : (row_item.type === 'paragraph' ? 'w-full lg:min-w-2/3 lg:w-2/3 lg:max-w-2/3' : 'w-full lg:min-w-1/3 lg:w-1/3 lg:max-w-1/3'), row_item.type === 'image' ? 'flex items-center justify-center' : 'p-5']">
+								<p v-if="row_item.type === 'paragraph'"	
+									v-html="row_item.content"></p> 
+								<img v-if="row_item.type === 'image'" 
+									class="max-h-full max-w-full"
+									:src="'' + row_item.content.image_src"
+									:alt="''+ row_item.content.image_alt"/>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-klei bg-levv-klei-background col-start-1 lg:col-start-5 col-end-7 row-start-4 row-end-6 p-[25px]">
@@ -134,7 +150,7 @@ The snippet can be overriden before including the actual template in order to ex
 			'url':'@{ url }',
 			'organization':'@{ text-organization }',
 			'function':'@{ text-function }',
-			'description':'@{ +description }',
+			'description':`@{ +description }`,
 			'referral_1':'@{ text-referral-person-1 }',
 			'referral_1_text':'@{ text-referral-text-1 }',
 			'referral_1_url':'@{ url-referral-text-1 }',
@@ -162,6 +178,73 @@ The snippet can be overriden before including the actual template in order to ex
 	<@ end @>
 	]
 	console.log(assignments);
+	assignments.forEach((assignment) => {
+		const description = assignment.description;
+		const split_regex = /<\/p><p/gi
+		let assignment_paragraphs = description.replaceAll(split_regex,'</p>||SPLIT||<p');
+		assignment_paragraphs = assignment_paragraphs.split("||SPLIT||")
+		const paragraph_regex = /<p class=\"am-block\">(.*)<\/p>/gi
+		
+		for (let i = 0; i < assignment_paragraphs.length; i++) {
+			assignment_paragraphs[i] = assignment_paragraphs[i].replaceAll(paragraph_regex,"$1")
+		}
+		const largest_array = assignment_paragraphs.length > assignment.images.length ? assignment_paragraphs.length : assignment.images.length;
+		let rows = [];
+		const assignment_images = assignment.images;
+		for (let index = 0; index < largest_array; index++) {
+			console.log(`Row ${index}`)
+			let assignment_image;
+			let assignment_paragraph;
+			let row = [];
+			if(typeof assignment_images[index] !== 'undefined') {
+				assignment_image = assignment_images[index]
+			}
+			if(typeof assignment_paragraphs[index] !== 'undefined') {
+				assignment_paragraph = assignment_paragraphs[index]
+			}
+
+			if (assignment_image !== undefined && assignment_paragraph === undefined) {
+				row[0] = {
+					type: "image",
+					content: assignment_image
+				}
+				rows.push(row);
+				continue;
+			}
+
+			if (assignment_image === undefined && assignment_paragraph !== undefined) {
+				row[0] = {
+					type: "paragraph",
+					content: assignment_paragraph
+				}
+				rows.push(row);
+				continue;
+			}
+
+			const is_even_row = index % 2;
+			if (is_even_row === 0) {
+				row[0] = {
+					type: "image",
+					content: assignment_image
+				}
+				row[1] = {
+					type: "paragraph",
+					content: assignment_paragraph
+				}
+			} else {
+				row[0] = {
+					type: "paragraph",
+					content: assignment_paragraph
+				}
+				row[1] = {
+					type: "image",
+					content: assignment_image
+				}
+			}
+			rows.push(row)
+		}
+		assignment.rows = rows;
+	})
 
 	let selectedAssignments = assignments;
 </script>
