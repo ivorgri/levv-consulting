@@ -17,7 +17,7 @@ The snippet can be overriden before including the actual template in order to ex
 			<li class="text-xl lg:text-3xl grid grid-cols-levv-assignment-filter-header grid-rows-levv-assignment-filter-header transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="assignmentTag in store.assignmentTags">
 				<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
 				</div>
-				<button :id="assignmentTag.id" type="radio" :value="assignmentTag.value" @click="updateAssignmentsList" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-xl uppercase p-3" :class="assignmentTag.value === store.selectedAssignmentTag ? 'border-levv-wijnrood' : ''">{{ assignmentTag.label }}</button>
+				<button :id="assignmentTag.id" type="radio" :value="assignmentTag.value" @click="updateAssignmentsList" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-2xl uppercase p-3" :class="assignmentTag.value === store.selectedAssignmentTag ? 'border-levv-wijnrood' : ''">{{ assignmentTag.label }}</button>
             </li>
 		</ul>
 	</template>
@@ -25,7 +25,7 @@ The snippet can be overriden before including the actual template in order to ex
 	<template id="assignment-filtered-list-template">
 		<ul class="flex flex-col gap-6 w-full">
 			<li v-for="assignment in store.selectedAssignments" class="grid grid-cols-levv-assignment-block grid-rows-levv-assignment-block max-w-fit">
-				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-korenblauw bg-levv-klei-background col-start-1 col-end-4 row-start-1 row-end-3 z-20 grid grid-cols-levv-assignment-header grid-rows-levv-assignment-header">
+				<div class="border-solid border-4 rounded-tl-xl rounded-br-2xl border-levv-korenblauw bg-levv-klei-background col-start-1 col-end-4 row-start-1 row-end-3 z-20 grid grid-cols-levv-assignment-header grid-rows-levv-assignment-header">
 					<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
 					</div>
 					<h2 class="col-start-2 col-end-2 row-start-2 row-end-2 text-xl lg:text-3xl font-passageway-bold text-levv-wijnrood text-center mb-[10px]">{{ assignment.title }}</h2>
@@ -33,7 +33,7 @@ The snippet can be overriden before including the actual template in order to ex
 						<h3 class="text-base lg:text-xl font-passageway-bold text-center content-center bg-levv-klei-background relative -bottom-[15px] px-[7px] mx-[35px]">{{ assignment.function }}</h3>
 					</div>
 				</div>
-				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-turqouise bg-levv-klei-background col-start-2 col-end-6 row-start-2 row-end-5 grid grid-cols-levv-assignment-body grid-rows-levv-assignment-body z-10">
+				<div class="border-solid border-4 rounded-tl-xl rounded-br-2xl border-levv-turqouise bg-levv-klei-background col-start-2 col-end-6 row-start-2 row-end-5 grid grid-cols-levv-assignment-body grid-rows-levv-assignment-body z-10">
 					<!-- <div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg" v-html="assignment.description"></div> -->
 					<!-- <div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around my-6 gap-3">
 						<img v-for="assignment_image in assignment.images" class="max-h-16 lg:max-h-36" 
@@ -50,14 +50,14 @@ The snippet can be overriden before including the actual template in order to ex
 								<p v-if="row_item.type === 'paragraph'"	
 									v-html="row_item.content"></p> 
 								<img v-if="row_item.type === 'image'" 
-									class="max-h-full max-w-full"
+									class="max-h-full max-w-full rounded-tl-3xl rounded-br-3xl"
 									:src="'' + row_item.content.image_src"
 									:alt="''+ row_item.content.image_alt"/>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="border-solid border-4 rounded-tl-xl rounded-br-xl border-levv-klei bg-levv-klei-background col-start-1 lg:col-start-5 col-end-7 row-start-4 row-end-6 p-[25px]">
+				<div class="border-solid border-4 rounded-tl-xl rounded-br-2xl border-levv-klei bg-levv-klei-background col-start-1 lg:col-start-5 col-end-7 row-start-4 row-end-6 p-[25px]">
 					<div v-if="assignment.referral_1_text">
 						<span class="text-2xl">"</span> 
 						<p class="text-lg">{{ assignment.referral_1_text }}</p>
@@ -177,7 +177,7 @@ The snippet can be overriden before including the actual template in order to ex
 		},
 	<@ end @>
 	]
-	console.log(assignments);
+
 	assignments.forEach((assignment) => {
 		const description = assignment.description;
 		const split_regex = /<\/p><p/gi
