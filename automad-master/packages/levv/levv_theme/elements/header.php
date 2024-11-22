@@ -34,7 +34,7 @@
 					filter: 'contact'
 				} @>
 				<@ foreach in pagelist @>
-                	<a href="@{ url }" class="h-fit text-xs md:text-base lg:text-lg col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-transparent border-2 md:border-4 rounded-tl-xl rounded-br-xl uppercase p-1 md:p-2 group-hover:border-levv-klei group-focus:border-levv-klei">Start samenwerking</a>
+                	<a href="@{ url }" class="h-fit text-xs md:text-base lg:text-lg col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-levv-klei border-2 md:border-4 rounded-tl-2xl rounded-br-2xl uppercase p-1 md:p-2 group-hover:border-levv-korenblauw group-focus:border-levv-korenblauw">Start samenwerking</a>
 				<@ end @>
 			</div>
 			<div class="h-full flex flex-row justify-center items-center">

@@ -40,7 +40,7 @@
             <div class="group text-lg lowercase pl-5 font-semibold grid grid-cols-levv-header-contact grid-rows-levv-header-contact w-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105 content-center">
                 <div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative h-[10px] -top-[5px] justify-self-center bg-levv-klei-background">
                 </div>
-                <button id="submit" type="submit" value="Send" disabled class="h-fit col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-transparent border-4 rounded-tl-xl rounded-br-xl uppercase p-2 group-hover:border-levv-klei group-focus:border-levv-klei group-hover:cursor-pointer group-focus:cursor-pointer">Verstuur verzoek</a>
+                <button id="submit" type="submit" value="Send" disabled class="h-fit col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-levv-klei border-4 rounded-tl-2xl rounded-br-2xl uppercase p-2 group-hover:border-levv-korenblauw group-focus:border-levv-korenblauw group-hover:cursor-pointer group-focus:cursor-pointer">Verstuur verzoek</a>
 			</div>
         </fieldset>
     </form>
