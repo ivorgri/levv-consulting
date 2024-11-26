@@ -1,2 +1,3 @@
 @{ title }
+@{ text-function }
 @{ +description }

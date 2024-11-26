@@ -68,6 +68,29 @@
 @tailwind utilities;
 
 @layer base {
+	#levv-about-us h2 {
+		@apply text-xl;
+		@apply lg:text-2xl; 
+		@apply font-passageway-bold; 
+		@apply text-levv-wijnrood;
+		@apply mt-3;
+	}
+
+	#levv-about-us figure {
+		@apply flex;
+		@apply flex-col;
+		@apply items-center;
+		@apply my-5;
+	}
+
+	#levv-about-us figure img {
+		@apply w-4/5;
+	}
+
+	#levv-about-us figcaption {
+		@apply italic;
+	}
+
 	@font-face {
 		font-family: 'quicksand-light';
 		font-display: swap;
