@@ -36,7 +36,7 @@ module.exports = {
         'levv-assignment-filter-header': '25px auto',
         'levv-assignment-header': '25px auto 25px',
         'levv-assignment-body': '25px auto 25px',
-        'levv-collaboration-block': '25px auto 25px auto 1fr 25px',
+        'levv-collaboration-block': '25px auto 25px auto 25px auto 25px',
         'levv-collaboration-header': '25px auto 25px',
         'levv-collaboration-body': '25px auto 25px'
       },
@@ -54,7 +54,7 @@ module.exports = {
         'levv-assignment-filter-header': '25px auto',
         'levv-assignment-header': '25px auto 25px',
         'levv-assignment-body': '45px auto auto 25px',
-        'levv-collaboration-block': 'auto 25px auto',
+        'levv-collaboration-block': 'auto 25px auto 25px auto',
         'levv-collaboration-header': '25px auto 25px',
         'levv-collaboration-body': '45px auto 25px'
       },

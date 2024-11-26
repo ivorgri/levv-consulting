@@ -34,15 +34,7 @@ The snippet can be overriden before including the actual template in order to ex
 					</div>
 				</div>
 				<div class="border-solid border-4 rounded-tl-xl rounded-br-2xl border-levv-turqouise bg-levv-klei-background col-start-2 col-end-6 row-start-2 row-end-5 grid grid-cols-levv-assignment-body grid-rows-levv-assignment-body z-10">
-					<!-- <div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg" v-html="assignment.description"></div> -->
-					<!-- <div class="col-start-2 col-end-3 row-start-3 row-end-4 flex flex-row flex-wrap justify-around my-6 gap-3">
-						<img v-for="assignment_image in assignment.images" class="max-h-16 lg:max-h-36" 
-							:src="'' + assignment_image.image_src"
-							:alt="''+ assignment_image.image_alt"/>
-					</div> -->
 					<div class="col-start-2 col-end-3 row-start-2 row-end-3 text-base lg:text-lg flex flex-col">
-						<!-- <div class="assignment-row"></div> -->
-						<!-- <div class="assignment-row"></div> -->
 						<div v-for="(row, index) in assignment.rows" class="assignment-row flex justify-center items-center flex-wrap">
 							<div v-for="row_item in row" 
 								class="assignment-row-element grow odd:order-2 even:order-1"
