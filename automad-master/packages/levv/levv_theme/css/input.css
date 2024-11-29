@@ -68,6 +68,7 @@
 @tailwind utilities;
 
 @layer base {
+	
 	#levv-about-us h2 {
 		@apply text-xl;
 		@apply lg:text-2xl; 
