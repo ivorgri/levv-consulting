@@ -1,4 +1,4 @@
-        <footer id="footer" class="w-full">
+        <footer id="footer" class="w-full bg-levv-klei-header-background">
             <div class="w-full flex flex-col gap-8 bg-levv-wijnrood text-white py-6 items-center">
                 <div class="w-full md:w-1/3 flex flex-col md:flex-row items-center gap-6 justify-between">
                     <div class="flex flex-col items-center gap-2">
@@ -53,5 +53,7 @@
                 link.setAttribute('target', '_blank');
             });
         </script> -->
+<@ if @{ :origUrl } != '/' @>
     </body>
 </html>
+<@ end @>

@@ -23,7 +23,8 @@ module.exports = {
         'levv-dieppaars-about-us': '#472553BF', //Added Alpha value of 75%
         'levv-korenblauw-about-us': '#004E91BF', //Added Alpha value of 75%
         'levv-wijnrood-homepage-card': '#880A3CE6', //Added Alpha value of 75%
-        'levv-klei-header-background': '#f1f0efBF',
+        // 'levv-klei-header-background': '#f1f0efBF',
+        'levv-klei-header-background': '#f1f0efD9'
       },
       gridTemplateColumns: {
         'levv-menu': '50px auto 50px',

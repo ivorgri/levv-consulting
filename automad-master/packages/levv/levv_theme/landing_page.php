@@ -5,9 +5,54 @@ Define the default main snippet to display the actual content.
 The snippet can be overriden before including the actual template in order to extend a template.
 
 #>
-<main class="w-full flex flex-col items-center">
-	<div id="levv-question" class="w-full flex flex-col items-center fixed mt-levv-header bg-levv-klei-header-background">
-		<h1 class="text-xl lg:text-5xl p-2 lg:p-0"><span>Welke uitdaging wil je aangaan </span><span class="text-levv-wijnrood font-bold text-2xl lg:text-6xl">met Levv?</span></h1>
+<main class="w-full  h-screen overflow-y-auto">
+	<@ filelist { 
+		glob: @{ files | def ('*.png, *.jpg, *.jpeg') },
+		sort: 'asc'
+	} @>
+	<@ foreach in filelist { width: :width } @>
+		<img 
+			src="@{ :file }" 
+			alt="@{ :caption }"
+			class="h-screen md:h-auto md:w-screen object-cover fixed -z-10"/>
+	<@ end @>
+	<section class="levv-intro flex flex-col items-center mt-[118px] mb-10">
+		<div class="w-full md:w-3/4 text-lg bg-levv-klei-header-background px-5 py-3 flex flex-col gap-3">
+			@{ +main }
+		</div>
+	</section>
+	<section class="levv-question bg-levv-klei-header-background w-screen flex flex-col justify-center mb-10">
+		<h1 class="w-100 text-lg md:text-2xl lg:text-4xl p-2 lg:p-0 flex items-center justify-end md:pr-10 lg:pr-20 sticky top-[98px] h-24 gap gap-1 md:gap-3">
+			<span>Welke uitdaging wil je aangaan </span>
+			<span class="text-levv-wijnrood font-bold w-32 lg:w-60">met Levv?</span>
+		</h1>
+		<span class="levv-empty-test-section h-[500px]">Empty</span>
+	</section>
+	<section class="levv-question bg-levv-klei-header-background w-screen flex flex-col justify-center mb-10">
+		<h2 class="w-100 text-lg md:text-2xl lg:text-4xl p-2 lg:p-0 flex items-center justify-end md:pr-10 lg:pr-20 sticky top-[98px] h-24 gap-1 md:gap-3">
+			<span>Professionalisering </span>
+			<span class="text-levv-wijnrood font-bold w-32 lg:w-60">met Levv!</span>
+		</h2>
+		<span class="levv-empty-test-section h-[500px]">Empty</span>
+	</section>
+	<section class="levv-question bg-levv-klei-header-background w-screen flex flex-col justify-center mb-10">
+		<h2 class="w-100 text-lg md:text-2xl lg:text-4xl p-2 lg:p-0 flex items-center justify-end md:pr-10 lg:pr-20 sticky top-[98px] h-24 gap-1 md:gap-3">
+			<span>Groeien </span>
+			<span class="text-levv-wijnrood font-bold w-32 lg:w-60">met Levv!</span>
+		</h2>
+		<span class="levv-empty-test-section h-[500px]">Empty</span>
+	</section>
+	<section class="levv-question bg-levv-klei-header-background w-screen flex flex-col justify-center mb-10">
+		<h2 class="w-100 text-lg md:text-2xl lg:text-4xl p-2 lg:p-0 flex items-center justify-end md:pr-10 lg:pr-20 sticky top-[98px] h-24 gap-1 md:gap-3">
+			<span>Ontwikkelen </span>
+			<span class="text-levv-wijnrood font-bold w-32 lg:w-60">met Levv!</span>
+		</h2>
+		<span class="levv-empty-test-section h-[500px]">Empty</span>
+	</section>
+	<!-- <div id="levv-question" class="w-full flex flex-col items-center fixed mt-levv-header bg-levv-klei-header-background">
+		<div class="levv-intro">@{ +main }</div>
+
+		
 		<ul class="flex flex-wrap gap-2 lg:gap-6 m-4 justify-center">
 			<@ newPagelist {
 				type: 'children',
@@ -58,6 +103,8 @@ The snippet can be overriden before including the actual template in order to ex
 				behavior: "smooth",
 			});
 		}
-	</script>
+	</script> -->
+	<@ elements/footer.php @>
 </main>
-<@ elements/footer.php @>
+</body>
+</html>
