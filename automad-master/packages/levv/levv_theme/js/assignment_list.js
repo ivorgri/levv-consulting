@@ -2,7 +2,7 @@ import { createApp, reactive } from "/packages/levv/levv_theme/js/petite_vue.js"
 
 const store = reactive({
     assignmentTags: assignmentTags,
-    selectedAssignmentTag: 'all',
+    selectedLevvBorderElement: 'all',
     assignments: assignments,
     selectedAssignments: selectedAssignments
 });
@@ -23,21 +23,31 @@ createApp({
     AssignmentTagFilter,
     AssignmentFilteredList,
     store,
-    updateAssignmentsList(element) {
-        const filterTag = element.target.value;
+    updateAssignmentsList(event) {
+        event.preventDefault();
+        let clickedElement = event.target;
+        while (clickedElement.nodeName !== "BUTTON") {
+            clickedElement = clickedElement.parentNode;
+        }
+        const filterTag = clickedElement.value;
         if (filterTag == "all") {
             store.selectedAssignments = store.assignments;
-            store.selectedAssignmentTag = filterTag;
+            store.selectedLevvBorderElement = filterTag;
             return;
         }
-        store.selectedAssignments = store.assignments.filter(function(assignment){
-            return assignment.tags.includes(filterTag)
-        })
+        let filteredAssignments = [];
+        for (let i = 0; i < store.assignments.length; ++i) {
+            const assignment = JSON.parse(JSON.stringify(store.assignments[i]))
+            if (assignment.tags.includes(filterTag)){
+                filteredAssignments.push(assignment);
+            }
+        }
+        store.selectedAssignments = filteredAssignments
         if (selectedAssignments.length === 0) {
             store.selectedAssignments = store.assignments;
-            store.selectedAssignmentTag = filterTag;
+            store.selectedLevvBorderElement = filterTag;
             return;
         }
-        store.selectedAssignmentTag = filterTag;
+        store.selectedLevvBorderElement = filterTag;
     }    
 }).mount();
