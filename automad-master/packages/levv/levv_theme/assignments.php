@@ -14,10 +14,17 @@ The snippet can be overriden before including the actual template in order to ex
 
 	<template id="assignment-tag-filter-template">
 		<ul class="flex row flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 my-8">
-			<li class="text-xl lg:text-3xl grid grid-cols-levv-assignment-filter-header grid-rows-levv-assignment-filter-header transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="assignmentTag in store.assignmentTags">
-				<div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
-				</div>
-				<button :id="assignmentTag.id" type="radio" :value="assignmentTag.value" @click="updateAssignmentsList" class="col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-4 rounded-tl-xl rounded-br-2xl uppercase p-3" :class="assignmentTag.value === store.selectedAssignmentTag ? 'border-levv-wijnrood' : ''">{{ assignmentTag.label }}</button>
+			<li class="group text-xl lg:text-3xl flex transition ease-in-out delay-125 hover:cursor-pointer hover:scale-105" v-for="levvBorderElement in store.assignmentTags">
+				<button :id="levvBorderElement.id" type="radio" :value="levvBorderElement.value" @click="updateAssignmentsList" class="text-center font-passageway-light uppercase" :class="levvBorderElement.value === store.selectedLevvBorderElement ? 'border-levv-wijnrood' : ''">
+					<@ set { :element_contains_js: true } @>
+					<@ set { :element_text_color: 'black' } @>
+					<@ set { :element_text_color_hover: 'black' } @>
+					<@ set { :element_text_color_active: 'levv-wijnrood' } @>
+					<@ set { :element_border_width: 20 } @>
+					<@ set { :element_border_color: 'levv-klei'} @>
+					<@ set { :element_border_color_hover: 'levv-klei'} @>
+					<@ elements/levv_border_element.php @>
+				</button>
             </li>
 		</ul>
 	</template>
@@ -41,7 +48,7 @@ The snippet can be overriden before including the actual template in order to ex
 								:class="[row.length === 1 ? 'w-full' : (row_item.type === 'paragraph' ? 'w-full lg:min-w-2/3 lg:w-2/3 lg:max-w-2/3' : 'w-full lg:min-w-1/3 lg:w-1/3 lg:max-w-1/3'), row_item.type === 'image' ? 'flex items-center justify-center' : 'p-5']">
 								<p v-if="row_item.type === 'paragraph'"	
 									v-html="row_item.content"></p> 
-								<img v-if="row_item.type === 'image'" 
+								<img v-if="row_item.type === 'image' && row_item.content.image_src" 
 									class="max-h-full max-w-full rounded-tl-3xl rounded-br-3xl"
 									:src="'' + row_item.content.image_src"
 									:alt="''+ row_item.content.image_alt"/>
@@ -100,38 +107,41 @@ The snippet can be overriden before including the actual template in order to ex
 	const assignmentTags = [
 		{
 			id: 'all',
-			label: 'overzicht',
+			title: 'overzicht',
 			value: 'all',
-			cost: '95,00',
-			cost_remark: ''
+			active: true
 		},
 		{
 			id: 'professionaliseren',
-			label: 'professionaliseren',
+			title: 'professionaliseren',
 			value: 'professionaliseren',
 			cost: '95,00',
-			cost_remark: ''
+			cost_remark: '',
+			active: false
 		},
 		{
 			id: 'groeien',
-			label: 'groeien',
+			title: 'groeien',
 			value: 'groeien',
 			cost: '95,00',
-			cost_remark: ''
+			cost_remark: '',
+			active: false
 		},
 		{
 			id: 'ontwikkelen',
-			label: 'ontwikkelen',
+			title: 'ontwikkelen',
 			value: 'ontwikkelen',
 			cost: '95,00',
-			cost_remark: ''
+			cost_remark: '',
+			active: false
 		},
 		{
 			id: 'interim',
-			label: 'interim',
+			title: 'interim',
 			value: 'interim',
 			cost: '95,00',
-			cost_remark: 'Uurtarief in overleg (afhankelijk van de soort opdracht)'
+			cost_remark: 'Uurtarief in overleg (afhankelijk van de soort opdracht)',
+			active: false
 		}
 	]
 	const assignments = [
@@ -237,6 +247,8 @@ The snippet can be overriden before including the actual template in order to ex
 		}
 		assignment.rows = rows;
 	})
+
+	console.log(assignments)
 
 	let selectedAssignments = assignments;
 </script>

@@ -24,17 +24,28 @@
 		<meta name="theme-color" content="#ffffff">
 	</head>
 	<body class="bg-levv-klei-background flex flex-wrap flex-col items-center m-0 p-0 w-full overflow-x-hidden font-quicksand-light">
-		<header id="levv-header" class="w-full grid grid-rows-1 grid-cols-3 h-[98px] md:p-2 fixed bg-levv-klei-header-background text-levv-wijnrood z-50">
-			<div class="group text-xs md:text-base lg:text-lg lowercase pl-5 font-semibold grid grid-cols-levv-header-contact grid-rows-levv-header-contact w-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105 content-center">
+		<header id="levv-header" class="w-full flex items-center justify-between h-[98px] md:p-2 fixed bg-levv-klei-header-background text-levv-wijnrood z-50">
+			<!-- grid grid-rows-1 grid-cols-3 -->
+			<!-- <div class="group text-xs md:text-base lg:text-lg lowercase pl-0 md:pl-5 font-semibold grid grid-cols-levv-header-contact grid-rows-levv-header-contact w-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105 content-center">
                 <div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative h-[10px] -top-[5px] justify-self-center bg-levv-klei-background">
-                </div>
+                </div> -->
+			<div class="group text-xs md:text-base lg:text-lg lowercase pl-0 md:pl-5 font-passageway-light font-semibold w-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105 content-center">
 				<@ newPagelist { 
 					type: 'children', 
 					context: '/',
 					filter: 'contact'
 				} @>
 				<@ foreach in pagelist @>
-                	<a href="@{ url }" class="h-fit text-xs md:text-base lg:text-lg col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-levv-klei border-2 md:border-4 rounded-tl-2xl rounded-br-2xl uppercase p-1 md:p-2 group-hover:border-levv-korenblauw group-focus:border-levv-korenblauw">Start samenwerking</a>
+                	<!-- <a href="@{ url }" class="h-fit text-xs md:text-base lg:text-lg col-start-2 col-end-3 row-start-2 row-end-3 text-center text-levv-wijnrood font-passageway-light border-solid border-levv-klei border-2 md:border-4 rounded-tl-2xl rounded-br-2xl uppercase p-1 md:p-2 group-hover:border-levv-korenblauw group-focus:border-levv-korenblauw">Start samenwerking</a> -->
+					<a href="@{ url }">
+						<@ set { :element_contains_js: false } @>
+						<@ set { :element_border_with: 10 } @>
+						<@ set { :element_title: 'Start samenwerking'} @>
+						<@ set { :element_content_padding: 'Start samenwerking'} @>
+						<@ set { :element_border_color: 'levv-klei'} @>
+						<@ set { :element_border_color_hover: 'levv-korenblauw'} @>
+						<@ /levv_border_element.php @>
+					</a>
 				<@ end @>
 			</div>
 			<div class="h-full flex flex-row justify-center items-center">
@@ -57,5 +68,12 @@
 					</picture>
 				</a>
 			</div>
+			<button id="levv-toggle-menu" class="group col-start-3 col-span-1 row-start-1 row-span-1 w-fit h-fit z-50" aria-label="Open/sluit menu">
+				<svg width="50" height="50" viewBox="0 0 100 100" class="stroke-levv-wijnrood group-hover:stroke-levv-korenblauw ">
+					<path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+					<path class="line line2" d="M 20,50 H 80" />
+					<path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+				</svg>
+			</button>
 			<@ /navbar.php @>
 		</header>
