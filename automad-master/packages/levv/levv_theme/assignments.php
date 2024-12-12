@@ -20,7 +20,7 @@ The snippet can be overriden before including the actual template in order to ex
 					<@ set { :element_text_color: 'black' } @>
 					<@ set { :element_text_color_hover: 'black' } @>
 					<@ set { :element_text_color_active: 'levv-wijnrood' } @>
-					<@ set { :element_border_width: 20 } @>
+					<@ set { :element_border_width: 'stroke-[20]' } @>
 					<@ set { :element_border_color: 'levv-klei'} @>
 					<@ set { :element_border_color_hover: 'levv-klei'} @>
 					<@ elements/levv_border_element.php @>

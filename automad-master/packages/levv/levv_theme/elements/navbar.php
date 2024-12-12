@@ -13,11 +13,11 @@
                 <div class="col-start-1 col-end-4 row-start-1 row-end-4 w-1/2 relative bg-levv-klei-background h-[10px] -top-[5px] justify-self-center">
                 </div>
                 <a href="@{ url }" class="h-fit col-start-1 col-end-3 row-start-1 row-end-3 text-center font-passageway-light border-solid border-levv-klei border-4 rounded-tl-2xl rounded-br-2xl uppercase p-3 group-hover:border-levv-korenblauw group-focus:border-levv-korenblauw group-hover:text-levv-wijnrood group-focus:text-levv-wijnrood">@{ title }</a> -->
-            <li class="group text-lg md:text-3xl lg:text-5xl lowercase font-semibold h-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105">
+            <li class="group text-base md:text-3xl lg:text-5xl lowercase font-semibold h-fit transition ease-in-out hover:cursor-pointer hover:scale-105 focus:cursor-pointer focus:scale-105">
                 <a href="@{ url }" class="font-passageway-light uppercase flex">
-                    <@ set { :element_border_with: 20 } @>
+                    <@ set { :element_border_width: "stroke-[10] md:stroke-[20]" } @>
                     <@ set { :element_title: @{ title} } @>
-                    <@ set { :element_content_padding: 0 } @>
+                    <@ set { :element_content_padding: 'p-0 md:p-2' } @>
                     <@ set { :element_border_color: 'levv-klei'} @>
                     <@ set { :element_border_color_hover: 'levv-korenblauw'} @>
                     <@ set { :element_text_color: 'levv-korenblauw'} @>
