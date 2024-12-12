@@ -16,15 +16,16 @@ The snippet can be overriden before including the actual template in order to ex
 			alt="@{ :caption }"
 			class="h-screen md:h-auto md:w-screen object-cover fixed -z-10"/>
 	<@ end @>
-	<section class="levv-intro flex flex-col items-center mt-[118px] mb-10 rounded-tl-xl rounded-br-xl">
-		<div class="w-full md:w-3/4 text-lg bg-levv-klei-header-background px-5 py-3 flex flex-col gap-3">
+	<section class="levv-intro flex flex-col items-center mt-[118px] mb-10">
+		<div class="w-full md:w-3/4 text-base md:text-xl bg-levv-klei-header-background rounded-tl-xl rounded-br-xl px-5 py-3 flex flex-col gap-3">
 			@{ +main }
 		</div>
 	</section>
-	<section class="levv-question bg-levv-klei-header-background w-[85%] flex flex-col justify-center mb-10 ml-[15%] rounded-tl-xl">
-		<h1 class="w-100 text-lg md:text-2xl lg:text-4xl p-2 lg:p-0 flex items-center justify-end md:pr-5 lg:pr-10 sticky top-[98px] h-24 gap gap-1 md:gap-3">
+
+	<section class="levv-question bg-levv-klei-header-background w-full md:w-[85%] flex flex-col justify-center mb-10 md:ml-[15%] rounded-tl-xl">
+		<h1 class="w-full text-base md:text-2xl lg:text-4xl p-2 lg:p-0 flex items-center justify-end md:pr-5 lg:pr-10 md:sticky md:top-[98px] h-24 gap gap-1 md:gap-3">
 			<span>Welke uitdaging wil je aangaan </span>
-			<span class="text-levv-wijnrood font-bold w-32 lg:w-60">met Levv?</span>
+			<span class="text-levv-wijnrood font-bold w-20 md:w-32 lg:w-60">met Levv?</span>
 		</h1>
 	</section>
 
@@ -34,13 +35,17 @@ The snippet can be overriden before including the actual template in order to ex
 		context: "/homepage-sections",
 	} @>
 	<@ foreach in pagelist @>
-		<section class="levv-question bg-levv-klei-header-background w-[85%] flex flex-col justify-center mb-10 ml-[15%] rounded-tl-xl">
-			<h2 class="w-100 text-lg md:text-2xl lg:text-4xl p-2 flex items-center justify-end md:py-6 md:pr-5 lg:pr-10 sticky top-[98px] gap-1 md:gap-3">
+		<section class="levv-question bg-levv-klei-header-background md:w-[85%] flex flex-col justify-center mb-10 md:ml-[15%] rounded-tl-xl rounded-br-xl">
+			<h2 class="w-100 text-base md:text-2xl lg:text-4xl p-2 flex items-center justify-end md:py-6 md:pr-5 lg:pr-10 md:sticky md:top-[98px] gap-1 md:gap-3">
 				<span>@{ title } </span>
-				<span class="text-levv-wijnrood font-bold w-32 lg:w-60">met Levv!</span>
+				<span class="text-levv-wijnrood font-bold w-20 md:w-32 lg:w-60">met Levv!</span>
 			</h2>
-			<div class="w-1/2 text-lg md:text-xl lg:text-2xl pb-5 pl-5 lg:pl-10 h-fit">
-				<@ set { :element_contains_js: false } @>
+			<!-- pb-5 pl-5 lg:pl-10 -->
+			<div class="w-full md:w-1/2 text-base md:text-xl lg:text-2xl p-5 h-fit 
+				border-solid  border-levv-turqouise border-2 rounded-tl-xl rounded-br-xl
+				text-center">
+				@{ +cornerstone_description }
+				<!-- <@ set { :element_contains_js: false } @>
 				<@ set { :element_text_color: 'black' } @>
 				<@ set { :element_text_color_hover: 'black' } @>
 				<@ set { :element_text_color_active: 'levv-wijnrood' } @>
@@ -49,7 +54,7 @@ The snippet can be overriden before including the actual template in order to ex
 				<@ set { :element_border_color_hover: 'levv-turqouise'} @>
 				<@ set { :element_title: @{ +cornerstone_description } } @>
 				<@ set { :element_content_padding: 5 } @>
-				<@ elements/levv_border_element.php @>
+				<@ elements/levv_border_element.php @> -->
 			</div>
 			<!-- <span class="text-lg md:text-xl lg:text-2xl p-5 h-fit">@{ +cornerstone_description }</span> -->
 		</section>
