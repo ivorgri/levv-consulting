@@ -101,8 +101,9 @@ The snippet can be overriden before including the actual template in order to ex
 	<@ newPagelist {
 		type: 'children',
 		excludeHidden: false,
-		context: @{ urlShowPagesBelow },
+		context: "/homepage-sections",
 	} @>
+
 
 	const assignmentTags = [
 		{
@@ -111,39 +112,22 @@ The snippet can be overriden before including the actual template in order to ex
 			value: 'all',
 			active: true
 		},
-		{
-			id: 'professionaliseren',
-			title: 'professionaliseren',
-			value: 'professionaliseren',
-			cost: '95,00',
-			cost_remark: '',
-			active: false
-		},
-		{
-			id: 'groeien',
-			title: 'groeien',
-			value: 'groeien',
-			cost: '95,00',
-			cost_remark: '',
-			active: false
-		},
-		{
-			id: 'ontwikkelen',
-			title: 'ontwikkelen',
-			value: 'ontwikkelen',
-			cost: '95,00',
-			cost_remark: '',
-			active: false
-		},
-		{
-			id: 'interim',
-			title: 'interim',
-			value: 'interim',
-			cost: '95,00',
-			cost_remark: 'Uurtarief in overleg (afhankelijk van de soort opdracht)',
-			active: false
-		}
+		<@ foreach in pagelist @>
+			{
+				'id': '@{ title | strtolower }',
+				'title': '@{ title | strtolower }',
+				'value': '@{ title | strtolower }',
+				'active': false
+			},
+		<@ end @>
 	]
+
+	<@ newPagelist {
+		type: 'children',
+		excludeHidden: false,
+		context: @{ urlShowPagesBelow },
+	} @>
+
 	const assignments = [
 	<@ foreach in pagelist @>
 		{
@@ -194,7 +178,6 @@ The snippet can be overriden before including the actual template in order to ex
 		let rows = [];
 		const assignment_images = assignment.images;
 		for (let index = 0; index < largest_array; index++) {
-			console.log(`Row ${index}`)
 			let assignment_image;
 			let assignment_paragraph;
 			let row = [];
@@ -247,8 +230,6 @@ The snippet can be overriden before including the actual template in order to ex
 		}
 		assignment.rows = rows;
 	})
-
-	console.log(assignments)
 
 	let selectedAssignments = assignments;
 </script>
