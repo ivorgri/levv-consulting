@@ -88,6 +88,5 @@ The snippet can be overriden before including the actual template in order to ex
 		},
 	<@ end @>
 	]
-	console.log(collaborations)
 </script>
 <script src="/packages/@{theme}/js/collaboration_slider.js" type="module"></script>
